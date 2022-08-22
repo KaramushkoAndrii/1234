@@ -13,7 +13,10 @@ let PopUpCallback = document.querySelector(".footer__popup-callback")
 let btnCallbackPopUp = document.querySelector(".footer__button")
 let PopUpCallbackClose = document.querySelector(".callback__close")
 let PopUpCallbackOk = document.querySelector(".callback__button")
-let swiper = new Swiper(".mySwiper", {
+const swiperEl = document.querySelector('.mySwiper');
+
+if(swiperEl) {
+    let swiper = new Swiper(swiperEl, {
     slidesPerView: 1,
     loop: true,
     spaceBetween: 161,
@@ -26,14 +29,7 @@ let swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
   });
-
-  try {
-    swiper
-  }
-  catch(err) {
-  console.log(1);
-  }
-
+}
 
 if (btnPopUp) {
     btnPopUp.addEventListener("click", function () {
